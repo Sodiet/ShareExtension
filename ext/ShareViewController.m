@@ -12,7 +12,7 @@
 NSUInteger m_inputItemCount = 0;
 
 NSString * m_invokeArgs = NULL;
-NSString * APP_SHARE_GROUP = @"group.com.promultitouch.magazineone.share";
+NSString * APP_SHARE_GROUP = @"group.com.promultitouch.magazineone.shared";
 const NSString * APP_URL_SCHEME = @"flipabit";
 CGFloat m_oldAlpha = 1.0;
 
@@ -46,13 +46,13 @@ CGFloat m_oldAlpha = 1.0;
     
     NSData * jpegData = UIImageJPEGRepresentation( image, 1.0 );
 
-    //NSURL * containerURL = [ [ NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier: APP_SHARE_GROUP ];
+    NSURL * containerURL = [ [ NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier: APP_SHARE_GROUP ];
 
-    //NSString * documentsPath = containerURL.path;
+    NSString * documentsPath = containerURL.path;
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    //NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
-    NSString *documentsPath = [paths objectAtIndex:0];
+    //NSString *documentsPath = [paths objectAtIndex:0];
     
     NSString * filePath = [ documentsPath stringByAppendingPathComponent: fileName ];
     
