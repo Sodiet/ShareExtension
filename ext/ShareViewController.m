@@ -86,7 +86,10 @@ CGFloat m_oldAlpha = 1.0;
                      return;
                  }
                 
-                 NSString * filePath = [ self saveImageToAppGroupFolder: image fileName:  [[NSUUID new] UUIDString ]];
+                 NSString *UUID = [[NSUUID new] UUIDString ];
+                 NSString *prefix = @"image_";
+                
+                 NSString * filePath = [ self saveImageToAppGroupFolder: image fileName: [prefix stringByAppendingString:UUID]];
                 
                  NSLog(@"PassSelectedItems: %@", filePath);
                 
